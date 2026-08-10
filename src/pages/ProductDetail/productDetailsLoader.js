@@ -1,6 +1,6 @@
 import { getProductById } from "../../services/productService";
 
-export async function productLoader({ params }) {
+export async function loader({ params }) {
   const id = params.id;
   if (!id) return;
 

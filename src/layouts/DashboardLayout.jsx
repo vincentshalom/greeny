@@ -1,5 +1,5 @@
 function DashboardLayout() {
-  return <div>Dashboard</div>;
+  return <section>Dashboard</section>;
 }
 
 export default DashboardLayout;
