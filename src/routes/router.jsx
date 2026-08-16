@@ -17,6 +17,8 @@ import OrderConfirmation from "../pages/OrderConfirmation/OrderConfirmation";
 import { orderConfirmationLoader } from "../pages/OrderConfirmation";
 import Login from "../pages/Auth/Login";
 import { authLoader } from "../pages/Auth/loginLoader";
+import Search from "../components/search/Search";
+import { searchLoader } from "../components/search/searchLoader";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Home />, loader: homeLoader },
+      { path: "contact", element: <Contact />, loader: contactLoader },
       {
         path: "products",
         element: <Products />,
@@ -36,6 +39,7 @@ const router = createBrowserRouter([
         element: <ProductDetails />,
         loader: productDetailsLoader,
       },
+      { path: "search", element: <Search />, loader: searchLoader },
       {
         path: "cart",
         element: <Cart />,
@@ -50,7 +54,6 @@ const router = createBrowserRouter([
         element: <OrderConfirmation />,
         loader: orderConfirmationLoader,
       },
-      { path: "contact", element: <Contact />, loader: contactLoader },
 
       { path: "*", element: <NotFound /> },
     ],
@@ -60,7 +63,7 @@ const router = createBrowserRouter([
     element: <AuthLayout />,
     children: [
       { path: "login", element: <Login />, loader: authLoader },
-      { path: "signup", element: <Signup /> },
+      // { path: "signup", element: <Signup /> },
     ],
   },
 ]);
